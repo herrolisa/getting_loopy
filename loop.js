@@ -69,3 +69,16 @@ function copyArray(originArray,destinationArray){
 	console.log(originArray);
 }
 copyArray(valuesArray,copyOfValuesArray);
+
+// Final Boss
+// Stage 1 - Only String Values
+var miscStorage = [ [], "Carrots", 9, "Beets", {}, {name: 'Todd B.'}, "Mush" ];
+function generateArrayOfStrings(storage){
+	var newArr = [];
+	for (var i = 0; i < storage.length; i++) {
+      var stringy = storage[i].toString();
+      newArr.push(stringy);
+	}
+	console.log(newArr);
+}
+generateArrayOfStrings(miscStorage);
