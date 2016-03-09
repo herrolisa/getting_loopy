@@ -20,3 +20,20 @@ for (var i = 10; i < 21; i++) {
       stringOfNumbers += value;
 	}
 console.log(stringOfNumbers);
+
+// Add only even numbrs to an array
+var evenNumberArray =[];
+for (var i = 0; i < 100; i++) {
+	if (i%2 === 0){
+		evenNumberArray.push(i);
+	}
+}
+console.log(evenNumberArray);
+
+// Accessing only the odd indexes of an Array - 'Not Even Brah'
+var oopsArray = ["turn", "down", "for", "what"];
+for (var i = 1; i < oopsArray.length; i+=2) {
+	oopsArray.splice(i, 0,"none");
+}
+console.log(oopsArray);
+
