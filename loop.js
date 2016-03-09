@@ -56,5 +56,16 @@ function nap(schedule){
 	}
 }
 }
-
 nap(napSchedule);
+
+// CopyArray - clone array values
+var copyOfValuesArray = [];
+var valuesArray = [99, 66, 829, 1941, 8, 76];
+function copyArray(originArray,destinationArray){
+	for (var i = 0; i < originArray.length; i++) {
+		destinationArray.push(originArray[i]);
+	}
+	console.log(destinationArray);
+	console.log(originArray);
+}
+copyArray(valuesArray,copyOfValuesArray);
