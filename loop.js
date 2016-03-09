@@ -37,3 +37,4 @@ for (var i = 1; i < oopsArray.length; i+=2) {
 }
 console.log(oopsArray);
 
+// Going backwards?!
