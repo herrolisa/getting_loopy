@@ -38,3 +38,23 @@ for (var i = 1; i < oopsArray.length; i+=2) {
 console.log(oopsArray);
 
 // Going backwards?!
+for (var i = oopsArray.length - 1; i >= 0; i--) {
+	console.log(oopsArray[i]);
+}
+
+// isNapTime
+var isNapTime = false;
+var napSchedule = [false, false, true, false, true, true];
+function nap(schedule){
+	for (var i = 0; i < schedule.length; i++) {
+	if (schedule[i]){
+		console.log("ZzZzZzZz");
+	}
+	else{
+		console.log("Gotta get to work");
+		isNapTime = true;
+	}
+}
+}
+
+nap(napSchedule);
