@@ -21,6 +21,13 @@ for (var i = 10; i < 21; i++) {
 	}
 console.log(stringOfNumbers);
 
+function appendToString(x,y){
+  for (var i = x; i < y; i++) {
+    var stringy = i.toString();
+    stringofNumbers += stringy;
+  }
+}
+
 // Add only even numbrs to an array
 var evenNumberArray =[];
 for (var i = 0; i < 100; i++) {
@@ -46,8 +53,7 @@ for (var i = oopsArray.length - 1; i >= 0; i--) {
 var isNapTime = false;
 var napSchedule = [false, false, true, false, true, true];
 function nap(schedule){
-	for (var i = 0; i < schedule.length; i++) {
-	if (schedule[i]){
+	if (schedule){
 		console.log("ZzZzZzZz");
 	}
 	else{
@@ -55,8 +61,11 @@ function nap(schedule){
 		isNapTime = true;
 	}
 }
+
+for (var i = 0; i < napSchedule.length; i++){
+	nap(napSchedule[i]);
 }
-nap(napSchedule);
+
 
 // CopyArray - clone array values
 var copyOfValuesArray = [];
@@ -72,13 +81,78 @@ copyArray(valuesArray,copyOfValuesArray);
 
 // Final Boss
 // Stage 1 - Only String Values
+// var miscStorage = [ [], "Carrots", 9, "Beets", {}, {name: 'Todd B.'}, "Mush" ];
+// function generateArrayOfStrings(storage){
+// 	var newArr = [];
+// 	for (var i = 0; i < storage.length; i++) {
+//       var stringy = storage[i].toString();
+//       newArr.push(stringy);
+// 	}
+// 	console.log(newArr);
+// }
+// generateArrayOfStrings(miscStorage);
+
 var miscStorage = [ [], "Carrots", 9, "Beets", {}, {name: 'Todd B.'}, "Mush" ];
-function generateArrayOfStrings(storage){
-	var newArr = [];
-	for (var i = 0; i < storage.length; i++) {
-      var stringy = storage[i].toString();
-      newArr.push(stringy);
-	}
-	console.log(newArr);
+var newArr = [];
+function generateArrayOfStrings(storage,x){
+  for (var i = 0; i < storage.length; i++) {
+      if (typeof storage[i] === "string"){
+        x.push(storage[i]);  
+      }
+  }
 }
-generateArrayOfStrings(miscStorage);
+generateArrayOfStrings(miscStorage,newArr);
+console.log(newArr);
+
+// Final Form - Change values of objects stored within an Array
+var currentClass = [
+  {
+    name: 'Doug',
+    graduated: false,
+    enrolled: true
+  },
+  {
+    name: 'Pat',
+    graduated: false,
+    enrolled: false
+  },
+  {
+    name: 'Marsha',
+    graduated: false,
+    enrolled: false
+  },
+  {
+    name: 'Moira',
+    graduated: false,
+    enrolled: true
+  },
+  {
+    name: 'Ben',
+    graduated: false,
+    enrolled: true
+  },
+  {
+    name: 'Nigel the Giraffe',
+    graduated: false,
+    enrolled: false
+  },
+  {
+    name: 'Brandon the Shark',
+    graduated: false,
+    enrolled: true
+  }
+];
+
+function graduateAndSetNewClass(classy){
+  for (var i = 0; i < classy.length; i++) {
+	if (classy[i].enrolled === true){
+		classy[i].graduated = true;
+	}
+	else{
+		classy[i].enrolled = true;
+	}
+}
+}
+
+graduateAndSetNewClass(currentClass);
+console.log(currentClass);
